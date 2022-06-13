@@ -22,9 +22,17 @@ To resolve this issue:
 
 ## Installing
 1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
+   - A code editor ([VS Code](https://code.visualstudio.com/) is recommended)
+   - [Node.js](https://nodejs.org/en/)
+ 
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
+3. Install dependencies
+
+`npm install` or `npm i`
+
+3. Run the development server
+
+`npm run dev`
 
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
@@ -32,3 +40,10 @@ To resolve this issue:
 [lil-course-url]: https://www.linkedin.com/learning/
 [lil-thumbnail-url]: http://
 
+### Instructor
+
+**Sandy Ludosky**
+
+_Web Developer and Trainer_
+
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/sandy-ludosky).
