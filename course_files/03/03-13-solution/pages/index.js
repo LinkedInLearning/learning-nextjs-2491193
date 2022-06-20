@@ -18,7 +18,7 @@ export default function Home() {
       path: "/news/popular"
     }, 
     {
-      title: "Newswire API", 
+      title: "Sections", 
       desc: "Get an up-to-the-minute stream of published articles",
       path: "/sections"
     }
