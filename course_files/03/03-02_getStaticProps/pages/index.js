@@ -16,13 +16,12 @@ export default function Home() {
         <h1 className={styles.title}>News Feed</h1>
 
         <div className={styles.grid}>
-
-          <Link href="/news/"><a className={styles.card}>
-                <h2>Top Stories &rarr;</h2>
-                <p>Read articles currently on the homepage</p>
-              </a>
-            </Link>
-       
+          <Link href="/news/">
+            <a className={styles.card}>
+              <h2>Top Stories &rarr;</h2>
+              <p>Read articles currently on the homepage</p>
+            </a>
+          </Link>
         </div>
       </main>
 
