@@ -1,8 +1,36 @@
+import { useState } from "react"
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from "next/link"
+import { useRouter } from "next/router"
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const links = [
+    {
+      title: "Top Stories", 
+      desc: "Read articles currently on the homepage of the New York Times",
+      path: "/news/top-stories"
+    }, 
+    {
+      title: "Popular", 
+      desc: "Read the most popular articles on the New York Times",
+      path: "/news/popular"
+    }, 
+    {
+      title: "Newswire API", 
+      desc: "Get an up-to-the-minute stream of published articles",
+      path: "/sections"
+    }
+  ];
+  const [query, getQuery] = useState();
+  const router = useRouter()
+  const handleOnChange = e => getQuery(e.target.value)
+  const handleOnSubmit = e => {
+    e.preventDefault()
+    router.push(`/search/${query}`)
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,43 +40,23 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h1 className={styles.title}>News Feed</h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <form onSubmit={handleOnSubmit}>
+          <input type="text" onChange={handleOnChange} />
+        </form>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          {links.map(link => {
+            return( 
+            <Link key={link.path} href={link.path}>
+              <a className={styles.card}>
+                <h2>{link.title} &rarr;</h2>
+                <p>{link.desc}</p>
+              </a>
+            </Link>)
+          })}
+         
         </div>
       </main>
 
