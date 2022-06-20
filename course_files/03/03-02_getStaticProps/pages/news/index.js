@@ -1,5 +1,9 @@
+import Layout from "../../components/Layout"
 export default function News() {
-    return(<h1>Top Stories</h1>)
+    return(
+    <Layout>
+      <h1>Top Stories</h1>
+    </Layout>)
 }
 
 const API_KEY = "9hUvOqGGdnCBvGKg4EB3L7mGdBC8hKKJ"
