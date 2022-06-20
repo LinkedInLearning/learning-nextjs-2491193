@@ -2,8 +2,7 @@ import Head from 'next/head'
 import Layout from "../../components/Layout"
 import { handler } from "../api";
 
-function Posts({ results, title }) {
-  // Render post...
+function News({ results, title }) {
   return (
     <Layout>
       <Head>
@@ -20,45 +19,28 @@ function Posts({ results, title }) {
     </Layout>);
 }
 
-// This function gets called at build time
+
 export async function getStaticPaths() {
-  // Get the paths we want to pre-render based on posts
   return {
     paths: [
-      { params: { path: 'top-stories' } },
+      { params: { path: 'top-stories' } }, 
       { params: { path: 'popular' } }
     ],
-    fallback: false 
+    fallback: true // false or 'blocking'
   };
 }
-
-// to register for a new New York Times API KEY, visit : 
 const API_KEY = "9hUvOqGGdnCBvGKg4EB3L7mGdBC8hKKJ"
-// This also gets called at build time
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
+  const URL = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`
+  const results = await handler(URL)
 
-  // Pass post data to the page via props
-  switch(params.path) {
-    case 'top-stories':
-      return {
-        props: {
-          results : await handler(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${API_KEY}`), 
-          title: "Top Stories"
-        }
-      }
-     
-    case 'popular':
-      return {
-        props: {
-          results : await handler(`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${API_KEY}`), 
-          title: "Most Popular Stories"
-        }
-      }
-    default: 
-    return {
-      props: null
+  // The value of the `props` key will be
+  //  passed to the `Home` component
+  return {
+    props: {
+      results, 
+      title: "Top Stories" 
     }
   }
 }
-
-export default Posts;
+export default News;
