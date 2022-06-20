@@ -1,3 +1,8 @@
+import Layout from "../components/Layout"
 export default function NotFound() {
-    return(<h1>Not Found</h1>)
+    return(
+        <Layout>
+            <h1>Not Found</h1>
+        </Layout>
+    )
 }
