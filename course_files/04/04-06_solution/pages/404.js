@@ -5,16 +5,24 @@ import Layout from "../components/Layout"
 export default function NotFound() {
     return(
         <Layout>
-            <h1>Not Found</h1>
-            <Image src={gif} alt="not found"/>
-            <style jsx>
-                {`
-                    h1 {
-                        color: chocolate;
-                        visibility: hidden;
-                    }
-                `}
-            </style>
+            <div className="container">
+                <h1>Sorry we could not find what you are looking for</h1>
+                <Image src={gif} alt="not found"/>
+                <style jsx>
+                    {`
+                        .container {
+                            height : 100vh;
+                            display : flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-direction: column;
+                        }
+                        h1 {
+                            color: chocolate;
+                        }
+                    `}
+                    </style>
+                </div>
         </Layout>
     )
 }

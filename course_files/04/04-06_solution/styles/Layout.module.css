@@ -3,3 +3,18 @@
     width: 80%;
     margin: 1.5rem auto;
 }
+
+.link {
+    color: purple
+}
+.link:hover {
+    text-decoration: underline;
+}
+
+.active {
+    color: purple;
+    font-weight: 700;
+}
+.active:hover {
+    text-decoration: underline;
+}
