@@ -8,4 +8,13 @@
     margin: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+.img {
+    border-radius: 4px;
+}
+
+.link {
+    margin-left: 10px;
 }

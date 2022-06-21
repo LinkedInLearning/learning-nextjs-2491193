@@ -11,7 +11,8 @@ export default function List({ results, title }) {
           return(
             <li  className={styles.card} key={uri}>
               {/* Image */}
-              <a href={url} rel="noreferrer nofollower">
+              <Image className={styles.img} src={img} alt={title} width="75" height="75"/>
+              <a className={styles.link} href={url} rel="noreferrer nofollower">
                 {title}
               </a>
             </li>)
