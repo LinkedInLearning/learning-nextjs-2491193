@@ -3,7 +3,6 @@ import gif from "../../public/not-found.gif"
 export async function results(url) {
     const response = await fetch(url);
     const data = await response.json();
-  
     return data.results.map(result => {
       let img = null
       if (!!result.multimedia) {
