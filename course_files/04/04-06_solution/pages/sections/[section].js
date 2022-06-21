@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Layout from "../../components/Layout"
 import List from "../../components/List"
-import { results as fetch_results, handler } from "../api";
+import { results, handler } from "../api";
 
 function Posts(props) {
   // Render post...
@@ -35,10 +35,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
 
   // Pass post data to the page via props
-  const results = await fetch_results(`https://api.nytimes.com/svc/news/v3/content/nyt/${params.section}.json?api-key=${API_KEY}`)
+  const data = await results(`https://api.nytimes.com/svc/news/v3/content/nyt/${params.section}.json?api-key=${API_KEY}`)
   return {
     props: {
-      results, 
+      results: data, 
       title:  "Section: " + params.section
     }
   }
