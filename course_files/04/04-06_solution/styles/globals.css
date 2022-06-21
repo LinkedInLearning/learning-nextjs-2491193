@@ -1,0 +1,27 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    color: #333;
+}
+
+h1 {
+  color: blueviolet;
+}
+
+p {
+  font-size: 18px;
+  color: gray;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 18px;
+  color: gray;
+}
+
+* {
+  box-sizing: border-box;
+}
