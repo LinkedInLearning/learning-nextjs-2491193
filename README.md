@@ -1,7 +1,13 @@
+
 # Learning Next.js
 This is the repository for the LinkedIn Learning course Learning Next.js. The full course is available from [LinkedIn Learning][lil-course-url].
 
-_See the readme file in the main branch for updated instructions and information._
+![Learning Next.js][lil-thumbnail-url] 
+
+The Next.js web development framework gives you all the benefits of a server-side rendering tool with the speed and ease of a single-page app. Using this popular, React-based tool, you can build, manage, and customize a complete web application from scratch in JavaScript.
+
+In this course, instructor Sandy Ludosky shows you how to get the best developer experience from your Next.js project—with zero configuration, zero user headaches, and lightning fast, dynamic page speeds. Explore the benefits of server-side rendering with web frameworks like Next.js. Sandy walks you through basic features such as pages, data fetching, and layout options; advanced topics like dynamic routes and API routes; and how to build and stylize a React project from start to finish so you can create a Next.js app on your own.
+
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
 
@@ -35,15 +41,14 @@ To resolve this issue:
 `npm run dev`
 
 
-[0]: # (Replace these placeholder URLs with actual course URLs)
-
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
-
 ### Instructor
 
 **Sandy Ludosky**
 
-_Web Developer and Trainer_
+_Web Developer and Trainer_                     
+                            
 
 Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/sandy-ludosky).
+
+[lil-course-url]: https://www.linkedin.com/learning/learning-next-js
+[lil-thumbnail-url]: https://cdn.lynda.com/course/2491193/2491193-1661366795372-16x9.jpg
